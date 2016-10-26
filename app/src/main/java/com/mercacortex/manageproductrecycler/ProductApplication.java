@@ -6,13 +6,14 @@ import com.mercacortex.manageproductrecycler.model.Product;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by usuario on 20/10/16.
  */
 
 public class ProductApplication extends Application {
-    private ArrayList<Product> products = new ArrayList<Product>();
+    private ArrayList<Product> products = new ArrayList();
 
     @Override
     public void onCreate() {
@@ -29,9 +30,14 @@ public class ProductApplication extends Application {
         products.add(product);
     }
 
-    public ArrayList<Product> getProducts(){
-        // Hay que implementar la interfaz IComparable en Product
-        Collections.sort(products);
+    public List<Product> getProducts(){
+
+        // Si queremos que compare según distintas opciones, tendremos sólo un getProducts
+        // sin sobrecargarlo, con la opción como parámetro
+
+        //Collections.sort(products, Product.PRICE_COMPARATOR);
+        // Cambiar la configuración a Java 8
+        Collections.sort(products, (p1, p2) -> Double.compare(p1.getmPrice(), p2.getmPrice()));
         return products;
     }
 }

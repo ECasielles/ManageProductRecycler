@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Sombra -->
+    <item>
+        <shape>
+            <!-- Mirar la teoría de colores de Android -->
+            <solid android:color="@color/colorSombraFoco" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+
+    <!-- Contenido -->
+    <!-- Para que salga la sombra-->
+    <item android:bottom="4dp">
+        <shape>
+            <solid android:color="@color/colorContenidoFoco" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+</layer-list>

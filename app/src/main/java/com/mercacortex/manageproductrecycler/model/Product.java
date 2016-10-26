@@ -1,11 +1,13 @@
 package com.mercacortex.manageproductrecycler.model;
 
+import java.util.Comparator;
 import java.util.Locale;
 
 /**
  * Created by usuario on 20/10/16.
  */
 
+// Implementa la interfaz Comparable para poder ordenar
 public class Product implements Comparable<Product>{
     private int mId;
     private String mName;
@@ -15,6 +17,23 @@ public class Product implements Comparable<Product>{
     private double mPrice;
     private int mStock;
     private int mImage;
+
+    // Objetos que van a implementar la interfaz Comparator
+    // Es mucho más rápido al ser static final
+    public static final Comparator<Product> PRICE_COMPARATOR = new Comparator<Product>() {
+        @Override
+        public int compare(Product p1, Product p2) {
+            // La diferencia respecto a Comparable es que pide 2 objetos que comparar
+            return Double.compare(p1.getmPrice(), p2.getmPrice());
+        }
+    };
+    public static final Comparator<Product> STOCK_COMPARATOR = new Comparator<Product>() {
+        @Override
+        public int compare(Product p1, Product p2) {
+            return p1.getmStock() - p2.getmStock();
+        }
+    };
+
 
     public Product(String mName, String mDescription, String mDosage, String mBrand, double mPrice, int mStock, int mImage) {
         //this.mId = UUID.randomUUID(); es para saber que nos puede dar UUID de forma automática
@@ -131,6 +150,7 @@ public class Product implements Comparable<Product>{
 
     @Override
     // Devuelve 0 si son iguales o el valor del mayor
+    // Equivale al método de la burbuja
     public int compareTo(Product p) {
         if(this.getmName().compareTo(p.getmName()) == 0) {
             return this.getmBrand().compareTo(p.getmBrand());
@@ -138,7 +158,5 @@ public class Product implements Comparable<Product>{
             return this.getmName().compareTo(p.getmName());
         }
     }
-
-    // Quiero que ordene por campos
 
 }

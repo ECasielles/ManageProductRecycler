@@ -5,5 +5,11 @@
     <color name="colorAccent">#ff4081</color>
     <color name="colorPar">#80f784</color>
     <color name="colorImpar">#ffffff</color>
+    <color name="colorSombra">#f124ffff</color>
+    <color name="colorContenido">#aaa4f000</color>
+    <color name="colorSombraFoco">#2124ffff</color>
+    <color name="colorContenidoFoco">#5aa4f000</color>
+    <color name="colorSombraPresionado">#aa22aaaa</color>
+    <color name="colorContenidoPresionado">#aa4afaaa</color>
 
 </resources>
