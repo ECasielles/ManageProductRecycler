@@ -1,4 +1,4 @@
-package com.mercacortex.manageproductrecycler;
+package com.mercacortex.manageproductrecycler.presenter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.mercacortex.manageproductrecycler.R;
+import com.mercacortex.manageproductrecycler.interfaces.ILoginMvp;
 
 /**
  * This class operate the classic login screen using MVP method.
@@ -37,7 +40,7 @@ public class LoginRelative_Activity extends AppCompatActivity implements ILoginM
             @Override
             public void onClick(View v) {
                 if (loginMvp.validateCredentials(edtUser.getText().toString(), edtPassword.getText().toString())) {
-                    Intent intent = new Intent(getApplicationContext(), ProductsActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), ProductActivity.class);
                     startActivity(intent);
                 }
             }

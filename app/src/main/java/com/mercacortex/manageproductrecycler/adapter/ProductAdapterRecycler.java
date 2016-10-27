@@ -8,10 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.mercacortex.manageproductrecycler.ProductApplication;
+import com.mercacortex.manageproductrecycler.presenter.ProductApplication;
 import com.mercacortex.manageproductrecycler.R;
 import com.mercacortex.manageproductrecycler.model.Product;
 
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -21,9 +22,9 @@ import java.util.List;
 // The <VH> has to be declared in order to manage VHs
 public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterRecycler.ProductViewHolder>{
 
-
     private List<Product> products;
     private Context context;
+    private boolean ASC = true;
 
     public ProductAdapterRecycler(Context context){
         this.context = context;
@@ -65,5 +66,24 @@ public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterR
             txvStock = (TextView) item.findViewById(R.id.txv_itemStock);
             txvPrice = (TextView) item.findViewById(R.id.txv_itemPrice);
         }
+    }
+
+    //public void getAllProducts(List<Product> productList) {
+    public void getAllProducts() {
+        //return products;
+    }
+    public void sortAlphabetically() {
+        ASC = !ASC;
+
+        // Empties the list and reloads it
+        products.clear();
+
+        //products.addAll(productList);
+        products.addAll(((ProductApplication) context.getApplicationContext()).getProducts(ASC));
+
+        // Notifies all views whose adapter is this one (Observable-Observer Pattern)
+        notifyDataSetChanged();
+
+        // Sends back the sorted list to the view
     }
 }

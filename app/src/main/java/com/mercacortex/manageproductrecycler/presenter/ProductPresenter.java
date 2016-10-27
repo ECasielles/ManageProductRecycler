@@ -1,9 +1,11 @@
-package com.mercacortex.manageproductrecycler;
+package com.mercacortex.manageproductrecycler.presenter;
 
 import android.content.Context;
 import android.text.TextUtils;
 
 
+import com.mercacortex.manageproductrecycler.R;
+import com.mercacortex.manageproductrecycler.interfaces.IProductMvp;
 import com.mercacortex.manageproductrecycler.model.Product;
 
 /**

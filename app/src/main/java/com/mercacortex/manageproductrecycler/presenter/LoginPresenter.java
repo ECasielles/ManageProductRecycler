@@ -1,7 +1,10 @@
-package com.mercacortex.manageproductrecycler;
+package com.mercacortex.manageproductrecycler.presenter;
 
 import android.content.Context;
 import android.text.TextUtils;
+
+import com.mercacortex.manageproductrecycler.R;
+import com.mercacortex.manageproductrecycler.interfaces.ILoginMvp;
 
 /**
  * Created by usuario on 6/10/16.

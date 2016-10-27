@@ -1,4 +1,4 @@
-package com.mercacortex.manageproductrecycler;
+package com.mercacortex.manageproductrecycler.interfaces;
 
 /**
  * Created by jaime on 23/10/16.

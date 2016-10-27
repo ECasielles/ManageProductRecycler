@@ -1,4 +1,4 @@
-package com.mercacortex.manageproductrecycler;
+package com.mercacortex.manageproductrecycler.presenter;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,7 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class AddProduct extends AppCompatActivity implements IProductMvp.View{
+import com.mercacortex.manageproductrecycler.R;
+import com.mercacortex.manageproductrecycler.interfaces.IProductMvp;
+
+public class AddProductActivity extends AppCompatActivity implements IProductMvp.View{
     IProductMvp.Presenter presenter;
     EditText edtName;
     EditText edtDescription;
@@ -19,7 +22,7 @@ public class AddProduct extends AppCompatActivity implements IProductMvp.View{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_product);
+        setContentView(R.layout.activity_manage_product);
 
         initialize();
     }
@@ -33,7 +36,7 @@ public class AddProduct extends AppCompatActivity implements IProductMvp.View{
         edtPrice = (EditText) findViewById(R.id.edt_price);
         edtStock = (EditText) findViewById(R.id.edt_stock);
 
-        btnAdd = (Button) findViewById(R.id.btn_add);
+        btnAdd = (Button) findViewById(R.id.btn_ok);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +47,7 @@ public class AddProduct extends AppCompatActivity implements IProductMvp.View{
                         edtBrand.getText().toString(),
                         edtPrice.getText().toString(),
                         edtStock.getText().toString())){
-                    Intent intent = new Intent(getApplicationContext(), ProductsActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), ProductActivity.class);
                     startActivity(intent);
                 }
             }

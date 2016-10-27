@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.mercacortex.manageproductrecycler.AddProduct"
+    tools:context="com.mercacortex.manageproductrecycler.presenter.AddProductActivity"
     android:orientation="vertical">
 
     <ScrollView
@@ -46,7 +46,8 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
+                android:inputType="textMultiLine"
+
                 android:ems="10"
                 android:id="@+id/edt_description"
                 android:hint="Descripción del producto"/>
@@ -116,14 +117,10 @@
                 android:hint="Cantidad en stock del medicamento"/>
             </android.support.design.widget.TextInputLayout>
 
-            <Button
-                android:text="Añadir Medicamento"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/btn_add"
-                android:layout_below="@id/til_stock"
-                android:backgroundTint="@color/colorPrimary" />
+            <include layout="@layout/btnok_btncancel" />
+
         </LinearLayout>
+
     </ScrollView>
 
 
