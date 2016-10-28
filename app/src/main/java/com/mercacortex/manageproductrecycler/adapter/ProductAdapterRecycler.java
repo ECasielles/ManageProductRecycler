@@ -24,11 +24,12 @@ public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterR
 
     private List<Product> products;
     private Context context;
-    private boolean ASC = true;
+    private boolean ASC;
 
     public ProductAdapterRecycler(Context context){
         this.context = context;
         products = ((ProductApplication) context.getApplicationContext()).getProducts();
+        ASC = false;
     }
 
     @Override
@@ -72,8 +73,8 @@ public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterR
     public void getAllProducts() {
         //return products;
     }
+
     public void sortAlphabetically() {
-        ASC = !ASC;
 
         // Empties the list and reloads it
         products.clear();
@@ -84,6 +85,11 @@ public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterR
         // Notifies all views whose adapter is this one (Observable-Observer Pattern)
         notifyDataSetChanged();
 
-        // Sends back the sorted list to the view
+        // Sorting can be managed by either the DAO or the Adapter
+        // We prefer loading the DAO
+        ASC = !ASC;
+        products.clear();
+        products.addAll(((ProductApplication) context.getApplicationContext()).getProducts(ASC));
     }
+
 }

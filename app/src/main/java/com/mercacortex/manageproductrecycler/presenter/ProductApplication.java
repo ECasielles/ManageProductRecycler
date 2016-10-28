@@ -54,7 +54,9 @@ public class ProductApplication extends Application {
         if (ascending)
             Collections.sort(products);
         else
-            Collections.sort(products, (p1, p2) -> -1 * p1.compareTo(p2));
+            Collections.sort(products, Collections.reverseOrder());
+            //Collections.reverse(products);
+            // Invierte el orden, así que falla si no estaba ordenado antes
 
         return products;
     }

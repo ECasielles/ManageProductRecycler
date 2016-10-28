@@ -1,12 +1,14 @@
 package com.mercacortex.manageproductrecycler.presenter;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.mercacortex.manageproductrecycler.R;
 import com.mercacortex.manageproductrecycler.interfaces.ILoginMvp;
@@ -24,6 +26,9 @@ public class LoginRelative_Activity extends AppCompatActivity implements ILoginM
     private EditText edtUser;
     private Button btnOk;
     private final String TAG = "loginrelative";
+    //private TextInputLayout tilUser
+    //private TextInputLayout tilPassword
+    private TextView txvForgot;
 
 
     @Override
@@ -36,6 +41,19 @@ public class LoginRelative_Activity extends AppCompatActivity implements ILoginM
         edtPassword = (EditText) findViewById(R.id.edt_password);
 
         btnOk = (Button) findViewById(R.id.btn_ok);
+
+        //
+        // TODO: asignaciones pendientes
+        //
+
+        // Added AssetManager to fetch our custom font
+        // Be careful with resource's name
+        // Also, assets are organized in folders
+        Typeface font = Typeface.createFromAsset(getAssets(),"flowerskingdom.ttf");
+        // Font assignment
+        txvForgot.setTypeface(font);
+
+
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
