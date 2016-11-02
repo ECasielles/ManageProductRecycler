@@ -1,4 +1,4 @@
-package com.mercacortex.manageproductrecycler.presenter;
+package com.mercacortex.manageproductrecycler;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.mercacortex.manageproductrecycler.R;
 import com.mercacortex.manageproductrecycler.adapter.ProductAdapterRecycler;
 
 public class ProductActivity extends AppCompatActivity {
@@ -16,6 +15,7 @@ public class ProductActivity extends AppCompatActivity {
     private ProductAdapterRecycler adapter;
     private RecyclerView rcvProduct;
     private static final int ADD_PRODUCT = 0;
+    private static final int EDIT_PRODUCT = 1;
 
 
     @Override
@@ -49,15 +49,18 @@ public class ProductActivity extends AppCompatActivity {
         Intent intent;
         switch (item.getItemId()) {
             case R.id.action_add_product:
-                intent = new Intent(this, AddProductActivity.class);
+                intent = new Intent(ProductActivity.this, ManageProductActivity.class);
                 startActivityForResult(intent, ADD_PRODUCT);
                 break;
             case R.id.action_sort_alphabetically:
+                intent = new Intent(ProductActivity.this, ManageProductActivity.class);
                 adapter.sortAlphabetically();
                 break;
             case R.id.action_settings_general:
+                intent = new Intent(ProductActivity.this, ManageProductActivity.class);
                 break;
             case R.id.action_settings_account:
+                intent = new Intent(ProductActivity.this, ManageProductActivity.class);
                 break;
         }
         return super.onOptionsItemSelected(item);

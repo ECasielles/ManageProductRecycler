@@ -1,4 +1,4 @@
-package com.mercacortex.manageproductrecycler.presenter;
+package com.mercacortex.manageproductrecycler;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.mercacortex.manageproductrecycler.R;
 import com.mercacortex.manageproductrecycler.interfaces.IProductMvp;
+import com.mercacortex.manageproductrecycler.presenter.ProductPresenter;
 
 public class AddProductActivity extends AppCompatActivity implements IProductMvp.View{
     IProductMvp.Presenter presenter;

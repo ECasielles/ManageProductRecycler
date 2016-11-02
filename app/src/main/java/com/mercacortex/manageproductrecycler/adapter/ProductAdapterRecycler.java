@@ -8,11 +8,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.mercacortex.manageproductrecycler.presenter.ProductApplication;
+import com.mercacortex.manageproductrecycler.ProductApplication;
 import com.mercacortex.manageproductrecycler.R;
 import com.mercacortex.manageproductrecycler.model.Product;
 
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -89,6 +88,7 @@ public class ProductAdapterRecycler extends RecyclerView.Adapter<ProductAdapterR
         // We prefer loading the DAO
         ASC = !ASC;
         products.clear();
+        // Reinitialize the product list from DAO
         products.addAll(((ProductApplication) context.getApplicationContext()).getProducts(ASC));
     }
 

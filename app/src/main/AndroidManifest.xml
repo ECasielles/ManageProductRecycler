@@ -8,8 +8,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presenter.ProductActivity" />
-        <activity android:name=".presenter.ManageProductActivity"></activity>
+        <activity android:name=".ProductActivity" />
+        <activity android:name=".LoginRelative_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AddProductActivity" />
+        <activity android:name=".ManageProductActivity"/>
+        <activity android:name=".AccountSettingsActivity" />
+        <activity android:name=".GeneralSettingsActivity" />
     </application>
 
 </manifest>

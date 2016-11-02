@@ -1,4 +1,4 @@
-package com.mercacortex.manageproductrecycler.presenter;
+package com.mercacortex.manageproductrecycler;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.mercacortex.manageproductrecycler.R;
 import com.mercacortex.manageproductrecycler.interfaces.ILoginMvp;
 
 /**
@@ -49,6 +48,7 @@ public class LoginRelative_Activity extends AppCompatActivity implements ILoginM
         // Added AssetManager to fetch our custom font
         // Be careful with resource's name
         // Also, assets are organized in folders
+        // txvForgot = (TextView) findViewById(R.id.txv_forgot);
         Typeface font = Typeface.createFromAsset(getAssets(),"flowerskingdom.ttf");
         // Font assignment
         txvForgot.setTypeface(font);

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_account">Configuración de cuenta</string>
+    <string name="pref_rememberuser_title">Recordar usuario</string>
+    <string name="pref_rememberuser_summary">Indica si se recuerda el nombre de usuario</string>
+    <string name="pref_user_title">Usuario</string>
+    <string name="pref_user_summary">Nombre de usuario en la aplicación</string>
+    <string name="pref_rememberpassword_title">Recordar contraseña</string>
+    <string name="pref_rememberpassword_summary">Indica si se recuerda la contraseña de usuario</string>
+    <string name="pref_password_title">Contraseña</string>
+    <string name="pref_password_summary">Contraseña del usuario en la aplicación</string>
+
+    <string name="pref_general">Configuración general</string>
+
+    <string name="pref_numcolumn_title">Número de columnas</string>
+    <string name="pref_numcolumn_summary">Indicar el número de columnas que se visualizan</string>
+    <string name="pref_showimage_title">Mostrar imagen</string>
+    <string name="pref_showimage_summary">Indica si se muestran las imágenes</string>
+
+    <string-array name="pref_numcolumn_entries">
+        <item>1 columna</item>
+        <item>2 columna</item>
+        <item>3 columna</item>
+        <item>4 columna</item>
+    </string-array>
+    <string-array name="pref_numcolumn_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+</resources>

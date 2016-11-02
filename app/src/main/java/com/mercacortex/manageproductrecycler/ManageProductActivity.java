@@ -1,4 +1,4 @@
-package com.mercacortex.manageproductrecycler.presenter;
+package com.mercacortex.manageproductrecycler;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
